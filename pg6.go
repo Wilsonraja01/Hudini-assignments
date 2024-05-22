@@ -29,9 +29,9 @@ func main(){
 	for{
 		select {
 		case a:=<-channel1:
-			fmt.Println(<-a)
-		case <-quit:
-			fmt.Println("quit")
+			fmt.Println(a)
+		case b:=<-channel2:
+			fmt.Println(b)
 			return
 		}
 	}
