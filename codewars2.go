@@ -212,3 +212,45 @@ for i:=0;i<len(numbers);i++{
 }
   return answer
 }
+
+package kata
+
+// https://www.codewars.com/kata/554e4a2f232cdd87d9000038/train/go
+
+import "strings"
+
+func DNAStrand(dna string) string {
+  // your code here
+  words:=strings.Split(dna,"")
+  for i:=0;i<len(words);i++{
+    if(words[i]=="A"){
+      words[i]="T"
+    }else if(words[i]=="T"){
+      words[i]="A"
+    }else if(words[i]=="C"){
+      words[i]="G"
+    }else if(words[i]=="G"){
+      words[i]="C"
+    }
+  }
+  return strings.Join(words,"")
+}
+
+package kata
+
+// https://www.codewars.com/kata/56747fd5cb988479af000028/train/go
+
+import "strings"
+
+func GetMiddle(s string) string {
+  //Code goes here!
+  words:=strings.Split(s,"")
+  if(len(words)%2!=0){
+    return words[(len(words)/2)]
+  }else{
+    a:=[]string{}
+    a=append(a,words[(len(words)/2)-1])
+    a=append(a,words[(len(words)/2)])
+    return strings.Join(a,"") 
+  }
+}
